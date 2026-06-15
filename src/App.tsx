@@ -173,7 +173,7 @@ function App() {
               ))}
             </div>
           </div>
-          <FramedImage image="portrait" className="image-frame--portrait" />
+          <FramedImage image="about" className="image-frame--portrait" />
         </section>
 
         <section className="section video-section" aria-labelledby="video-title">

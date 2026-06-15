@@ -7,15 +7,11 @@ export const specialist = {
 export const images = {
   hero: {
     src: 'images/yegine/yegine-hero.jpg',
-    alt: 'Егине Левоновна Унанян у окна в светлом костюме',
+    alt: 'Егине Левоновна Унанян сидит на диване в светлом костюме',
   },
   about: {
     src: 'images/yegine/yegine-about.jpg',
-    alt: 'Егине Левоновна Унанян с книгами в спокойном интерьере',
-  },
-  portrait: {
-    src: 'images/yegine/yegine-portrait.jpg',
-    alt: 'Портрет Егине Левоновны Унанян в белом жакете',
+    alt: 'Егине Левоновна Унанян у окна в темном костюме',
   },
 };
 
