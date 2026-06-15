@@ -6,8 +6,8 @@ Important imagery is displayed inside `.image-frame` with `object-fit: contain` 
 
 | File | Description | Site usage |
 | --- | --- | --- |
-| `public-yegine/images/yegine/yegine-hero.jpg` | Егине Левоновна Унанян seated on a sofa in a light suit. | Hero portrait and Open Graph image. |
-| `public-yegine/images/yegine/yegine-about.jpg` | Егине Левоновна Унанян seated by a window in a dark suit. | About and work format section portrait. |
+| `public-yegine/images/yegine/yegine-hero-20260615-v2.jpg` | Егине Левоновна Унанян seated on a sofa in a light suit. | Hero portrait and Open Graph image. |
+| `public-yegine/images/yegine/yegine-about-20260615-v2.jpg` | Егине Левоновна Унанян seated by a window in a dark suit, kept exactly as provided by the client. | About and work format section portrait. |
 
 Source files provided by the client:
 
