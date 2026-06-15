@@ -249,6 +249,17 @@ li {
   margin: 28px 0;
 }
 
+.contact-phone {
+  flex-basis: 100%;
+  margin: 0;
+  color: var(--chocolate);
+  font-weight: 800;
+}
+
+.contact-phone a {
+  color: var(--burgundy);
+}
+
 .fact-list {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -609,6 +620,15 @@ li {
   justify-content: flex-end;
 }
 
+.contact-actions--compact .contact-phone {
+  color: #fffaf1;
+  text-align: right;
+}
+
+.contact-actions--compact .contact-phone a {
+  color: #fffaf1;
+}
+
 .mobile-sticky-cta {
   position: fixed;
   right: 14px;
@@ -712,6 +732,10 @@ li {
 
   .contact-actions--compact {
     justify-content: stretch;
+  }
+
+  .contact-actions--compact .contact-phone {
+    text-align: left;
   }
 
   .mobile-sticky-cta {

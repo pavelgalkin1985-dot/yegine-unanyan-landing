@@ -17,7 +17,7 @@ npm run preview
 
 - `src/App.tsx` - page layout and section rendering.
 - `src/data/siteContent.ts` - site text, section cards, image metadata.
-- `src/data/contacts.ts` - messenger links and first-message text. Replace TODO placeholders before launch.
+- `src/data/contacts.ts` - messenger links, MAX fallback phone link, and first-message text. Replace TODO placeholders before launch.
 - `src/styles.css` - visual system and responsive layout.
 - `public-yegine/` - the only public asset directory copied into the production build.
 - `.github/workflows/deploy-pages.yml` - GitHub Pages build/deploy workflow.
@@ -52,7 +52,8 @@ The project intentionally uses `publicDir: 'public-yegine'` in `vite.config.ts` 
 
 ## TODO Before Launch
 
-- Replace Telegram, WhatsApp, and VK placeholders in `src/data/contacts.ts`.
+- Replace Telegram and VK placeholders in `src/data/contacts.ts`.
+- Replace the temporary MAX `tel:+79040844777` fallback with the real MAX personal link, QR, or bot link when the client provides it.
 - Replace the canonical URL placeholder in `index.html`.
 - Confirm the final domain and Pages mode.
 - Add real reviews and video only after permission from patients.

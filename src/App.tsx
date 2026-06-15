@@ -19,15 +19,18 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 function ContactButtons({ compact = false }: { compact?: boolean }) {
   return (
     <div className={compact ? 'contact-actions contact-actions--compact' : 'contact-actions'}>
-      <a className="button button--primary" href={contacts.telegram} target="_blank" rel="noreferrer">
+      <a className="button button--primary" href={contacts.telegram.href} target="_blank" rel="noreferrer">
         Написать в Telegram
       </a>
-      <a className="button" href={contacts.whatsapp} target="_blank" rel="noreferrer">
-        WhatsApp
+      <a className="button" href={contacts.max.href}>
+        Написать в MAX
       </a>
-      <a className="button button--ghost" href={contacts.vk} target="_blank" rel="noreferrer">
+      <a className="button button--ghost" href={contacts.vk.href} target="_blank" rel="noreferrer">
         VK
       </a>
+      <p className="contact-phone">
+        Единый номер связи: <a href={contacts.max.href}>{contacts.max.phoneLabel}</a>
+      </p>
     </div>
   );
 }
@@ -67,7 +70,7 @@ function App() {
             </a>
           ))}
         </nav>
-        <a className="header-cta" href={contacts.telegram} target="_blank" rel="noreferrer">
+        <a className="header-cta" href={contacts.telegram.href} target="_blank" rel="noreferrer">
           Написать
         </a>
       </header>
@@ -82,7 +85,7 @@ function App() {
               Бережная комплексная помощь на стыке доказательной медицины, психологии и психотерапевтических подходов. 11 лет клинического опыта, индивидуальный маршрут и конфиденциальное пространство для восстановления внутренней опоры.
             </p>
             <div className="hero-actions">
-              <a className="button button--primary" href={contacts.telegram} target="_blank" rel="noreferrer">
+              <a className="button button--primary" href={contacts.telegram.href} target="_blank" rel="noreferrer">
                 Начать конфиденциальный диалог
               </a>
               <a className="button button--ghost" href="#requests">
@@ -231,6 +234,7 @@ function App() {
           <p>
             Это может быть короткое сообщение. Не нужно заранее идеально формулировать запрос - достаточно написать, что вы хотите записаться на первичную консультацию.
           </p>
+          <p>Выберите удобный способ связи: Telegram, MAX или VK.</p>
           <ContactButtons />
           <div className="message-hint">
             <span>Подсказка первого сообщения</span>
@@ -250,7 +254,7 @@ function App() {
         <ContactButtons compact />
       </footer>
 
-      <a className="mobile-sticky-cta" href={contacts.telegram} target="_blank" rel="noreferrer">
+      <a className="mobile-sticky-cta" href={contacts.telegram.href} target="_blank" rel="noreferrer">
         Написать Егине Левоновне
       </a>
     </div>
