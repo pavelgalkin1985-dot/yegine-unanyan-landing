@@ -72,8 +72,10 @@ Do not add `public/CNAME` unless the real domain is confirmed.
 - `src/styles.css` - visual system and responsive layout.
 - `public-yegine/` - active Vite public directory.
 - `public-yegine/images/yegine/` - current portrait images.
+- `assets-source/yegine-photos/` - current source photo files supplied by the client.
 - `IMAGE_MANIFEST.md` - image usage map.
 - `PROJECT_MEMORY.md` - fuller project memory and current status.
+- `DOMAIN_SETUP.md` - future custom domain instructions.
 
 ## Hard Rules
 
@@ -108,4 +110,3 @@ Expected follow-up tasks:
 - Add confirmed domain and canonical URL.
 - Add diploma/certificate gallery after client provides documents.
 - Possibly adjust visual/photo set again based on client feedback.
-

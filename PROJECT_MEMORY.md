@@ -36,6 +36,7 @@ Recent important commits:
 - `508acd5 Enable GitHub Pages workflow`
 - `12a8ab0 Update Yegine portrait photos`
 - `0bc896e Version Yegine portrait images`
+- `631638a Document Yegine project memory`
 
 ## Positioning
 
@@ -135,20 +136,28 @@ public-yegine/images/yegine/
 Current active images:
 
 ```text
-public-yegine/images/yegine/yegine-hero-20260615-v2.jpg
-public-yegine/images/yegine/yegine-about-20260615-v2.jpg
+public-yegine/images/yegine/yegine-hero-20260615-v3.jpg
+public-yegine/images/yegine/yegine-about-20260615-v3.jpg
+public-yegine/images/yegine/yegine-expert-20260615-v3.jpg
 ```
 
 Current image mapping:
 
-- `yegine-hero-20260615-v2.jpg` - main hero photo, Егине seated on a sofa in a light suit.
-- `yegine-about-20260615-v2.jpg` - second photo, Егине seated by a window in a dark suit.
+- `yegine-hero-20260615-v3.jpg` - main hero photo from `IMG_2197.PNG`, Егине smiling by a window in a dark suit.
+- `yegine-about-20260615-v3.jpg` - about photo from `photo_2026-06-15_13-02-10.jpg`, Егине seated on a sofa in a light suit.
+- `yegine-expert-20260615-v3.jpg` - work formats photo from `IMG_2196.PNG`, Егине in a dark suit in a calm interior.
 
-Important note from client:
+Current source files are preserved in:
 
-- The second photo must remain exactly as provided, without cropping or retouching.
-- The visible `3/3` marker in the supplied image should remain unless client provides a cleaner original.
-- Do not crop the hand or change the composition.
+```text
+assets-source/yegine-photos/
+```
+
+Important note:
+
+- No AI face editing or generative changes should be applied to photos.
+- Only technical resize/compression is allowed unless the client explicitly asks otherwise.
+- Use versioned filenames for photo replacements.
 
 Cache policy:
 
@@ -161,6 +170,8 @@ Old image names no longer used:
 yegine-hero.jpg
 yegine-about.jpg
 yegine-portrait.jpg
+yegine-hero-20260615-v2.jpg
+yegine-about-20260615-v2.jpg
 ```
 
 Image manifest:
@@ -186,10 +197,10 @@ Current description:
 Current canonical:
 
 ```text
-https://TODO-domain.example/
+https://pavelgalkin1985-dot.github.io/yegine-unanyan-landing/
 ```
 
-Keep canonical as TODO/safe placeholder until domain is confirmed.
+After custom domain connection, replace canonical and Open Graph URLs with the final domain.
 
 GitHub Pages repo deploy base:
 
@@ -204,6 +215,25 @@ Workflow:
 ```
 
 The workflow was updated so Pages can be configured for GitHub Actions deploy.
+
+Custom domain preparation:
+
+```text
+DOMAIN_SETUP.md
+```
+
+Do not add a CNAME file or switch `VITE_BASE_PATH=/` until the exact domain is confirmed.
+
+## Reviews
+
+Current review sources:
+
+- Telegram: `https://t.me/otzivieginelevonovni`
+- ПроДокторов: `https://prodoctorov.ru/moskva/vrach/900369-unanyan/`
+
+The site uses short, privacy-safe paraphrased review cards from publicly visible ПроДокторов reviews.
+
+Telegram web-view is linked as a source, but the visible review content in the checked posts was mostly image screenshots and short captions, so text was not manually transcribed into review cards.
 
 ## Verification Checklist
 
@@ -247,4 +277,3 @@ curl.exe -I https://pavelgalkin1985-dot.github.io/yegine-unanyan-landing/
 - Add documents/certificates gallery.
 - Possibly replace the second photo with a cleaner original without the `3/3` marker if client sends one.
 - Consider updating GitHub Actions versions if Node 20 action deprecation warnings become blocking.
-

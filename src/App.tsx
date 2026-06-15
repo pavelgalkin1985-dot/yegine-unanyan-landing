@@ -9,6 +9,8 @@ import {
   preparationSteps,
   requestCards,
   specialist,
+  testimonialSources,
+  testimonials,
   trustCards,
 } from './data/siteContent';
 
@@ -173,7 +175,7 @@ function App() {
               ))}
             </div>
           </div>
-          <FramedImage image="about" className="image-frame--portrait" />
+          <FramedImage image="expert" className="image-frame--portrait" />
         </section>
 
         <section className="section video-section" aria-labelledby="video-title">
@@ -190,15 +192,25 @@ function App() {
         <section className="section reviews-section" id="reviews">
           <SectionHeading
             eyebrow="Отзывы"
-            title="Отзывы готовятся к публикации"
-            text="Мы размещаем отзывы только с разрешения пациентов и бережно относимся к приватности каждой истории."
+            title="Отзывы пациентов"
+            text="Короткие выжимки из публичных источников без персональных данных и чувствительных медицинских подробностей."
           />
-          <div className="review-grid" aria-label="Места для будущих отзывов">
-            {[1, 2, 3].map((item) => (
-              <article className="review-card" key={item}>
-                <span>Отзыв {item}</span>
-                <p>Будет опубликован после согласования текста и разрешения пациента.</p>
+          <div className="review-grid" aria-label="Отзывы пациентов">
+            {testimonials.map((item) => (
+              <article className="review-card" key={item.text}>
+                <span>{item.source}</span>
+                <p>{item.text}</p>
+                <a href={item.href} target="_blank" rel="noreferrer">
+                  Источник
+                </a>
               </article>
+            ))}
+          </div>
+          <div className="source-links" aria-label="Ссылки на источники отзывов">
+            {testimonialSources.map((source) => (
+              <a className="button button--ghost" href={source.href} target="_blank" rel="noreferrer" key={source.href}>
+                {source.label}
+              </a>
             ))}
           </div>
         </section>

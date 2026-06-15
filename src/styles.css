@@ -498,6 +498,20 @@ li {
   border-style: dashed;
 }
 
+.review-card a {
+  color: var(--burgundy);
+  font-family: Manrope, "Segoe UI", sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
 .safety-section {
   background:
     linear-gradient(90deg, rgba(51, 37, 31, 0.88), rgba(51, 37, 31, 0.74)),

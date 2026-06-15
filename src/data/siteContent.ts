@@ -6,12 +6,16 @@ export const specialist = {
 
 export const images = {
   hero: {
-    src: 'images/yegine/yegine-hero-20260615-v2.jpg',
-    alt: 'Егине Левоновна Унанян сидит на диване в светлом костюме',
+    src: 'images/yegine/yegine-hero-20260615-v3.jpg',
+    alt: 'Егине Левоновна Унанян улыбается у окна в темном костюме',
   },
   about: {
-    src: 'images/yegine/yegine-about-20260615-v2.jpg',
-    alt: 'Егине Левоновна Унанян у окна в темном костюме',
+    src: 'images/yegine/yegine-about-20260615-v3.jpg',
+    alt: 'Егине Левоновна Унанян сидит на диване в светлом костюме',
+  },
+  expert: {
+    src: 'images/yegine/yegine-expert-20260615-v3.jpg',
+    alt: 'Егине Левоновна Унанян в темном костюме в спокойном интерьере',
   },
 };
 
@@ -92,4 +96,33 @@ export const paymentRules = [
   'Бронирование времени после предоплаты.',
   'Перенос или отмена возможны за 48 часов.',
   'При поздней отмене или неявке оплата не возвращается, потому что время было закреплено за клиентом.',
+];
+
+export const testimonials = [
+  {
+    source: 'Пациент, ПроДокторов',
+    text: 'Пациент отмечает неравнодушие врача, быстрое включение в ситуацию и помощь с дальнейшим маршрутом.',
+    href: 'https://prodoctorov.ru/moskva/vrach/900369-unanyan/',
+  },
+  {
+    source: 'Пациент, ПроДокторов',
+    text: 'В отзыве выделены профессионализм, чуткое отношение и подробное объяснение важности терапии.',
+    href: 'https://prodoctorov.ru/moskva/vrach/900369-unanyan/',
+  },
+  {
+    source: 'Пациент, ПроДокторов',
+    text: 'Пациент пишет о доброжелательности, понятных рекомендациях и внимательном отношении на приеме.',
+    href: 'https://prodoctorov.ru/moskva/vrach/900369-unanyan/',
+  },
+];
+
+export const testimonialSources = [
+  {
+    label: 'Отзывы в Telegram',
+    href: 'https://t.me/otzivieginelevonovni',
+  },
+  {
+    label: 'Отзывы на ПроДокторов',
+    href: 'https://prodoctorov.ru/moskva/vrach/900369-unanyan/',
+  },
 ];
