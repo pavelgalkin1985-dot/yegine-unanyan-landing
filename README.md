@@ -44,7 +44,9 @@ For the recommended repository name:
 VITE_BASE_PATH=/yegine-unanyan-landing/ npm run build
 ```
 
-The GitHub Actions workflow derives the Pages base path from the repository name: `/${{ github.event.repository.name }}/`.
+The GitHub Actions workflow sets `VITE_BASE_PATH=/yegine-unanyan-landing/` before `npm run build`.
+
+Local `npm run dev` keeps `/` as the base path for convenient local development.
 
 The project intentionally uses `publicDir: 'public-yegine'` in `vite.config.ts` so unrelated legacy files from other projects are not copied into the deploy artifact.
 
