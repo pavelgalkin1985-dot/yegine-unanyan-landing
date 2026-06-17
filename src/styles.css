@@ -703,6 +703,11 @@ li {
     overflow-x: auto;
     padding-bottom: 4px;
     white-space: nowrap;
+    scrollbar-width: none;
+  }
+
+  .main-nav::-webkit-scrollbar {
+    display: none;
   }
 
   .brand span:last-child {
