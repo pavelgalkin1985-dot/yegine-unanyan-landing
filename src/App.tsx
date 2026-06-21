@@ -1,5 +1,6 @@
 import { contacts } from './data/contacts';
 import {
+  aboutParagraphs,
   documentCards,
   formats,
   heroFacts,
@@ -84,7 +85,8 @@ function App() {
             <h1 id="hero-title">{specialist.fullName}</h1>
             <p className="hero-role">{specialist.role}</p>
             <p className="hero-lead">
-              Бережная комплексная помощь на стыке доказательной медицины, психологии и психотерапевтических подходов. 11 лет клинического опыта, индивидуальный маршрут и конфиденциальное пространство для восстановления внутренней опоры.
+              Бережная комплексная помощь на стыке доказательной медицины, психологии и психотерапевтических подходов. Стаж —{' '}
+              <strong className="experience-years">11 лет</strong>. Индивидуальный маршрут и конфиденциальное пространство для восстановления внутренней опоры.
             </p>
             <div className="hero-actions">
               <a className="button button--primary" href={contacts.telegram.href} target="_blank" rel="noreferrer">
@@ -107,40 +109,44 @@ function App() {
 
         <section className="section about-section" id="about">
           <FramedImage image="about" className="image-frame--soft" />
-          <div>
-            <SectionHeading eyebrow="Обо мне" title="Медицинский взгляд и бережная терапевтическая работа" />
-            <p className="large-copy">
-              Я помогаю людям восстанавливать душевное равновесие, внутреннюю опору и ресурс тела в кризисные периоды жизни. Моя работа объединяет медицинский взгляд, психологию, психотерапевтические подходы, когнитивно-поведенческие, психоаналитические и экзистенциальные методы.
-            </p>
-            <p>
-              Каждая история уникальна, поэтому я не использую шаблонные схемы. Мы вместе выстраиваем персональный маршрут помощи.
-            </p>
+          <div className="about-copy">
+            <SectionHeading
+              eyebrow="Обо мне"
+              title="Когда земля уходит из-под ног, важно не просто выстоять. Важно найти себя настоящего."
+            />
+            {aboutParagraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
         </section>
 
         <section className="section" id="requests">
           <SectionHeading
-            eyebrow="С чем можно обратиться"
-            title="Запросы, где важны и психика, и тело"
-            text="Бережная работа с выгоранием, стрессом, зависимым поведением, психосоматическими проявлениями и кризисными состояниями без обещаний мгновенного результата."
+            eyebrow="Направления работы"
+            title="С какими запросами я работаю"
           />
           <div className="request-grid">
             {requestCards.map((card, index) => (
               <article className="content-card content-card--large" key={card.title}>
                 <span>{String(index + 1).padStart(2, '0')}</span>
                 <h3>{card.title}</h3>
-                <p>{card.text}</p>
+                <ul className="request-points">
+                  {card.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>
         </section>
 
         <section className="section trust-section">
-          <SectionHeading eyebrow="Почему мне доверяют" title="Опора на клинический опыт и профессиональную этику" />
+          <SectionHeading eyebrow="Профессиональный подход" title="Почему выбирают меня?" />
           <div className="trust-grid">
             {trustCards.map((item) => (
-              <article className="content-card" key={item}>
-                <h3>{item}</h3>
+              <article className="content-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
               </article>
             ))}
           </div>
@@ -175,7 +181,6 @@ function App() {
               ))}
             </div>
           </div>
-          <FramedImage image="expert" className="image-frame--portrait" />
         </section>
 
         <section className="section video-section" aria-labelledby="video-title">

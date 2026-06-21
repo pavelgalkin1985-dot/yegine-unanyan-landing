@@ -1,6 +1,6 @@
 # IMAGE_MANIFEST.md
 
-The landing page currently uses 3 optimized portrait photos supplied by the client.
+The landing page currently uses 2 optimized portrait photos supplied by the client.
 
 Important imagery is displayed inside `.image-frame` with `object-fit: contain` so the subject is not cropped.
 
@@ -8,9 +8,8 @@ Important imagery is displayed inside `.image-frame` with `object-fit: contain` 
 
 | File | Source | Description | Site usage |
 | --- | --- | --- | --- |
-| `public-yegine/images/yegine/yegine-hero-20260615-v3.jpg` | `IMG_2197.PNG` | Егине Левоновна Унанян smiling by a window in a dark suit. | Hero portrait and Open Graph image. |
+| `public-yegine/images/yegine/yegine-hero-20260621-v4.jpg` | `IMG_2196.PNG` | Егине Левоновна Унанян seated by a window in a dark suit. | Hero portrait and Open Graph image. |
 | `public-yegine/images/yegine/yegine-about-20260615-v3.jpg` | `photo_2026-06-15_13-02-10.jpg` | Егине Левоновна Унанян seated on a sofa in a light suit. | About section portrait. |
-| `public-yegine/images/yegine/yegine-expert-20260615-v3.jpg` | `IMG_2196.PNG` | Егине Левоновна Унанян in a dark suit in a calm interior. | Work formats portrait. |
 
 ## Source Files
 
@@ -40,4 +39,6 @@ Old image names are no longer used:
 - `yegine-portrait.jpg`
 - `yegine-hero-20260615-v2.jpg`
 - `yegine-about-20260615-v2.jpg`
+- `yegine-hero-20260615-v3.jpg`
+- `yegine-expert-20260615-v3.jpg`
 
