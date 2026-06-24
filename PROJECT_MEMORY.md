@@ -78,7 +78,7 @@ Current sections:
 - About
 - Requests
 - Trust / professional ethics
-- Documents and education placeholders
+- Documents and education gallery
 - Work formats
 - Video review placeholder
 - Reviews placeholders
@@ -89,12 +89,11 @@ Current sections:
 
 Prepared future blocks:
 
-- Education and professional documents
 - Video review
 - Patient reviews
 - Additional certificates/gallery
 
-Do not invent universities, licenses, document numbers, dates, or credentials. Use TODO placeholders until client confirms.
+Do not invent universities, licenses, document numbers, dates, or credentials. Public document previews should keep sensitive serial/registration numbers masked unless the client explicitly approves publishing them.
 
 ## Contacts
 
@@ -136,16 +135,22 @@ public-yegine/images/yegine/
 Current active images:
 
 ```text
-public-yegine/images/yegine/yegine-hero-20260615-v3.jpg
+public-yegine/images/yegine/yegine-hero-20260621-v4.jpg
 public-yegine/images/yegine/yegine-about-20260615-v3.jpg
-public-yegine/images/yegine/yegine-expert-20260615-v3.jpg
+public-yegine/images/documents/yegine-certificate-addiction-psychology-20260624-v1.jpg
+public-yegine/images/documents/yegine-diploma-medical-specialist-20260624-v1.jpg
+public-yegine/images/documents/yegine-diploma-psychological-consulting-20260624-v1.jpg
+public-yegine/images/documents/yegine-diploma-therapy-internship-20260624-v1.jpg
 ```
 
 Current image mapping:
 
-- `yegine-hero-20260615-v3.jpg` - main hero photo from `IMG_2197.PNG`, Егине smiling by a window in a dark suit.
+- `yegine-hero-20260621-v4.jpg` - main hero photo from `IMG_2196.PNG`, Егине seated by a window in a dark suit.
 - `yegine-about-20260615-v3.jpg` - about photo from `photo_2026-06-15_13-02-10.jpg`, Егине seated on a sofa in a light suit.
-- `yegine-expert-20260615-v3.jpg` - work formats photo from `IMG_2196.PNG`, Егине in a dark suit in a calm interior.
+- `yegine-certificate-addiction-psychology-20260624-v1.jpg` - certificate preview from `PDF.pdf`.
+- `yegine-diploma-medical-specialist-20260624-v1.jpg` - medical specialist diploma preview from `РОССИЙСКАЯ ФЕДЕРАЦИЯ.pdf`.
+- `yegine-diploma-psychological-consulting-20260624-v1.jpg` - psychological consulting retraining diploma preview from `РОССИЙСКАЯ ФЕДЕРАЦИЯ (2).pdf`.
+- `yegine-diploma-therapy-internship-20260624-v1.jpg` - therapy internship diploma preview from `РОССИЙСКАЯ.pdf`.
 
 Current source files are preserved in:
 
@@ -274,6 +279,5 @@ curl.exe -I https://pavelgalkin1985-dot.github.io/yegine-unanyan-landing/
 - Replace TODO canonical when domain is chosen.
 - Add video review content.
 - Add approved patient reviews.
-- Add documents/certificates gallery.
 - Possibly replace the second photo with a cleaner original without the `3/3` marker if client sends one.
 - Consider updating GitHub Actions versions if Node 20 action deprecation warnings become blocking.

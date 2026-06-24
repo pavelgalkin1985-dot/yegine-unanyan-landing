@@ -514,15 +514,56 @@ li {
 }
 
 .document-grid {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 3vw, 28px);
 }
 
 .document-card {
-  min-height: 240px;
+  overflow: hidden;
+  padding: 0;
+  background: rgba(255, 250, 241, 0.86);
 }
 
 .document-card h3 {
   font-size: clamp(24px, 2.5vw, 32px);
+}
+
+.document-note {
+  max-width: 720px;
+  margin: -14px 0 28px;
+  color: rgba(101, 86, 69, 0.8);
+  font-size: 14px;
+}
+
+.document-card__image {
+  display: grid;
+  min-height: clamp(220px, 32vw, 430px);
+  place-items: center;
+  padding: clamp(12px, 2vw, 18px);
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(135deg, rgba(127, 142, 137, 0.1), rgba(125, 38, 56, 0.06)),
+    #f7efe3;
+}
+
+.document-card__image img {
+  width: 100%;
+  height: clamp(210px, 30vw, 410px);
+  object-fit: contain;
+  object-position: center;
+  filter: saturate(0.96) contrast(1.02);
+}
+
+.document-card__copy {
+  padding: clamp(20px, 3vw, 30px);
+}
+
+.document-card__copy span {
+  margin-bottom: 12px;
+}
+
+.document-card__copy p {
+  margin-bottom: 0;
 }
 
 .review-card {

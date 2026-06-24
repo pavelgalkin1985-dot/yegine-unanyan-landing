@@ -156,14 +156,20 @@ function App() {
           <SectionHeading
             eyebrow="Документы"
             title="Образование и профессиональная подготовка"
-            text="На сайте будут размещены ключевые дипломы и документы, подтверждающие медицинское образование, подготовку в области терапии, психологии и дополнительных профессиональных направлений. Остальные сертификаты можно будет добавить отдельной галереей."
+            text="Ключевые дипломы и сертификаты, подтверждающие медицинское образование, подготовку в терапии, психологии и дополнительных профессиональных направлениях."
           />
+          <p className="document-note">В публичных превью скрыты только серийные и регистрационные номера документов.</p>
           <div className="document-grid">
             {documentCards.map((item) => (
-              <article className="document-card" key={item}>
-                <span>TODO</span>
-                <h3>{item}</h3>
-                <p>Название документа, организация, дата и реквизиты будут добавлены после подтверждения клиентом.</p>
+              <article className="document-card" key={item.title}>
+                <a className="document-card__image" href={assetUrl(item.image)} target="_blank" rel="noreferrer">
+                  <img src={assetUrl(item.image)} alt={item.alt} loading="lazy" />
+                </a>
+                <div className="document-card__copy">
+                  <span>{item.label}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
               </article>
             ))}
           </div>
