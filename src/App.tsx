@@ -108,7 +108,6 @@ function App() {
         </section>
 
         <section className="section about-section" id="about">
-          <FramedImage image="about" className="image-frame--soft" />
           <div className="about-copy">
             <SectionHeading
               eyebrow="Обо мне"
@@ -118,6 +117,7 @@ function App() {
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
+          <FramedImage image="about" className="image-frame--soft" />
         </section>
 
         <section className="section" id="requests">

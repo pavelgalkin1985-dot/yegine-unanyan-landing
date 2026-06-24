@@ -342,7 +342,7 @@ li {
 
 .about-section {
   display: grid;
-  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr);
   gap: clamp(30px, 6vw, 86px);
   align-items: center;
 }
