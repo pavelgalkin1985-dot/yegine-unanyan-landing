@@ -113,8 +113,8 @@ function App() {
               eyebrow="Обо мне"
               title="Когда земля уходит из-под ног, важно не просто выстоять. Важно найти себя настоящего."
             />
-            {aboutParagraphs.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+            {aboutParagraphs.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
             ))}
           </div>
           <FramedImage image="about" className="image-frame--soft" />
