@@ -22,13 +22,13 @@ const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 function ContactButtons({ compact = false }: { compact?: boolean }) {
   return (
     <div className={compact ? 'contact-actions contact-actions--compact' : 'contact-actions'}>
-      <a className="button button--primary" href={contacts.telegram.href} target="_blank" rel="noreferrer">
+      <a className="button button--primary" href={contacts.telegram.href} target="_blank" rel="noopener noreferrer">
         Написать в Telegram
       </a>
       <a className="button" href={contacts.max.href}>
         Написать в MAX
       </a>
-      <a className="button button--ghost" href={contacts.vk.href} target="_blank" rel="noreferrer">
+      <a className="button button--ghost" href={contacts.vk.href} target="_blank" rel="noopener noreferrer">
         VK
       </a>
       <p className="contact-phone">
@@ -73,7 +73,7 @@ function App() {
             </a>
           ))}
         </nav>
-        <a className="header-cta" href={contacts.telegram.href} target="_blank" rel="noreferrer">
+        <a className="header-cta" href={contacts.telegram.href} target="_blank" rel="noopener noreferrer">
           Написать
         </a>
       </header>
@@ -89,7 +89,7 @@ function App() {
               <strong className="experience-years">11 лет</strong>. Индивидуальный маршрут и конфиденциальное пространство для восстановления внутренней опоры.
             </p>
             <div className="hero-actions">
-              <a className="button button--primary" href={contacts.telegram.href} target="_blank" rel="noreferrer">
+              <a className="button button--primary" href={contacts.telegram.href} target="_blank" rel="noopener noreferrer">
                 Начать конфиденциальный диалог
               </a>
               <a className="button button--ghost" href="#requests">
@@ -162,7 +162,7 @@ function App() {
           <div className="document-grid">
             {documentCards.map((item) => (
               <article className="document-card" key={item.title}>
-                <a className="document-card__image" href={assetUrl(item.image)} target="_blank" rel="noreferrer">
+                <a className="document-card__image" href={assetUrl(item.image)} target="_blank" rel="noopener noreferrer">
                   <img src={assetUrl(item.image)} alt={item.alt} loading="lazy" />
                 </a>
                 <div className="document-card__copy">
@@ -211,7 +211,7 @@ function App() {
               <article className="review-card" key={item.text}>
                 <span>{item.source}</span>
                 <p>{item.text}</p>
-                <a href={item.href} target="_blank" rel="noreferrer">
+                <a href={item.href} target="_blank" rel="noopener noreferrer">
                   Источник
                 </a>
               </article>
@@ -219,7 +219,7 @@ function App() {
           </div>
           <div className="source-links" aria-label="Ссылки на источники отзывов">
             {testimonialSources.map((source) => (
-              <a className="button button--ghost" href={source.href} target="_blank" rel="noreferrer" key={source.href}>
+              <a className="button button--ghost" href={source.href} target="_blank" rel="noopener noreferrer" key={source.href}>
                 {source.label}
               </a>
             ))}
@@ -277,7 +277,7 @@ function App() {
         <ContactButtons compact />
       </footer>
 
-      <a className="mobile-sticky-cta" href={contacts.telegram.href} target="_blank" rel="noreferrer">
+      <a className="mobile-sticky-cta" href={contacts.telegram.href} target="_blank" rel="noopener noreferrer">
         Написать Егине Левоновне
       </a>
     </div>
