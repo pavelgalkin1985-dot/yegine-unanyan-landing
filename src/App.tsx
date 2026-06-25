@@ -41,9 +41,25 @@ function ContactButtons({ compact = false }: { compact?: boolean }) {
 function FramedImage({ image, className = '' }: { image: ImageKey; className?: string }) {
   const current = images[image];
 
+  if (!current) {
+    console.error(`FramedImage: unknown image key "${image}"`);
+    return null;
+  }
+
+  const handleError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const target = e.currentTarget;
+    console.error(`Failed to load image: ${target.src}`);
+    target.style.display = 'none';
+  };
+
   return (
     <figure className={`image-frame ${className}`.trim()}>
-      <img src={assetUrl(current.src)} alt={current.alt} loading={image === 'hero' ? 'eager' : 'lazy'} />
+      <img
+        src={assetUrl(current.src)}
+        alt={current.alt}
+        loading={image === 'hero' ? 'eager' : 'lazy'}
+        onError={handleError}
+      />
     </figure>
   );
 }
