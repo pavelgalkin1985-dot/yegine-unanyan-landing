@@ -6,10 +6,10 @@ export const contacts = {
     label: 'Telegram',
     href: 'TODO_YEGINE_TELEGRAM_LINK',
   },
-  max: {
-    label: 'MAX',
+  whatsapp: {
+    label: 'WhatsApp',
     phoneLabel: '+7 904 084 4777',
-    href: 'tel:+79040844777', // TODO: replace with real MAX personal link / QR / bot link when provided.
+    href: 'tel:+79040844777', // TODO: replace with real WhatsApp personal link / QR / bot link when provided.
   },
   vk: {
     label: 'VK',
