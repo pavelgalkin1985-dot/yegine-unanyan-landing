@@ -25,14 +25,14 @@ function ContactButtons({ compact = false }: { compact?: boolean }) {
       <a className="button button--primary" href={contacts.telegram.href} target="_blank" rel="noreferrer">
         Написать в Telegram
       </a>
-      <a className="button" href={contacts.max.href}>
-        Написать в MAX
+      <a className="button" href={contacts.whatsapp.href}>
+        Написать в WhatsApp
       </a>
       <a className="button button--ghost" href={contacts.vk.href} target="_blank" rel="noreferrer">
         VK
       </a>
       <p className="contact-phone">
-        Единый номер связи: <a href={contacts.max.href}>{contacts.max.phoneLabel}</a>
+        Единый номер связи: <a href={contacts.whatsapp.href}>{contacts.whatsapp.phoneLabel}</a>
       </p>
     </div>
   );
@@ -257,7 +257,7 @@ function App() {
           <p>
             Это может быть короткое сообщение. Не нужно заранее идеально формулировать запрос - достаточно написать, что вы хотите записаться на первичную консультацию.
           </p>
-          <p>Выберите удобный способ связи: Telegram, MAX или VK.</p>
+          <p>Выберите удобный способ связи: Telegram, WhatsApp или VK.</p>
           <ContactButtons />
           <div className="message-hint">
             <span>Подсказка первого сообщения</span>
