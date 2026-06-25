@@ -301,5 +301,5 @@ function App() {
   );
 }
 
-export { FramedImage };
+export { assetUrl, ContactButtons, FramedImage, SectionHeading };
 export default App;
