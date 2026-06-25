@@ -2,14 +2,12 @@ const firstMessage =
   'Здравствуйте, Егине Левоновна! Я перешёл(ла) с вашего сайта и хочу записаться на первичную консультацию. Предпочтительный формат: онлайн / офлайн. Подскажите, пожалуйста, ближайшее свободное время.';
 
 const telegramBusinessLink = 'TODO_TELEGRAM_BUSINESS_LINK';
-const telegramBotUsername = 'TODO_TELEGRAM_BOT_USERNAME';
+const telegramBotUsername = 'YegineUnanyanBot';
 const telegramFallbackLink = 'TODO_YEGINE_TELEGRAM_LINK';
 
 const isRealValue = (value: string) => value.length > 0 && !value.startsWith('TODO_');
 const normalizedBotUsername = telegramBotUsername.replace(/^@/, '');
-const telegramBotStartLink = isRealValue(telegramBotUsername)
-  ? `https://t.me/${normalizedBotUsername}?start=site`
-  : 'https://t.me/TODO_TELEGRAM_BOT_USERNAME?start=site';
+const telegramBotStartLink = `https://t.me/${normalizedBotUsername}?start=site`;
 
 const telegramContact = (() => {
   if (isRealValue(telegramBusinessLink)) {
