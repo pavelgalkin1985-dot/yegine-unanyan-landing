@@ -207,8 +207,8 @@ function App() {
             text="Короткие выжимки из публичных источников без персональных данных и чувствительных медицинских подробностей."
           />
           <div className="review-grid" aria-label="Отзывы пациентов">
-            {testimonials.map((item) => (
-              <article className="review-card" key={item.text}>
+            {testimonials.map((item, index) => (
+              <article className="review-card" key={index}>
                 <span>{item.source}</span>
                 <p>{item.text}</p>
                 <a href={item.href} target="_blank" rel="noreferrer">
