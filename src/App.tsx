@@ -284,4 +284,5 @@ function App() {
   );
 }
 
+export { FramedImage };
 export default App;
