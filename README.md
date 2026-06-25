@@ -56,9 +56,22 @@ The client domain is not confirmed yet. Keep the current GitHub Pages repo deplo
 
 When the domain is ready, see `DOMAIN_SETUP.md` before changing `VITE_BASE_PATH`, canonical URLs, GitHub Pages settings, or adding a `CNAME` file.
 
+## Telegram integration
+
+Telegram contact settings are centralized in `src/data/contacts.ts`.
+
+- `TELEGRAM_BUSINESS_LINK` should be stored in the source as `telegramBusinessLink` when the client provides a real Telegram Business link like `https://t.me/m/...`.
+- The Business link is the preferred CTA target because it can open a personal Telegram chat with a prepared message.
+- `TELEGRAM_BOT_USERNAME` should be stored as `telegramBotUsername` when the bot username is available.
+- The bot start link uses `?start=site`, for example `https://t.me/BOT_USERNAME?start=site`, so the future bot backend can understand that the visitor came from the website.
+- The bot backend is deployed separately from this static website.
+- The Bot API token must never be committed to this repository, `.env.example`, GitHub Actions, README, or git history. Store it only as a protected secret on the backend platform.
+- Until the backend bot exists, the website must not claim that the bot already accepts and forwards consultation requests.
+
 ## TODO Before Launch
 
-- Replace Telegram and VK placeholders in `src/data/contacts.ts`.
+- Replace Telegram Business link or Telegram bot username placeholders in `src/data/contacts.ts`.
+- Replace VK placeholder in `src/data/contacts.ts`.
 - Replace the temporary MAX `tel:+79040844777` fallback with the real MAX personal link, QR, or bot link when the client provides it.
 - Replace the GitHub Pages canonical URL in `index.html` after the custom domain is connected.
 - Confirm the final domain and Pages mode.

@@ -23,8 +23,9 @@ function ContactButtons({ compact = false }: { compact?: boolean }) {
   return (
     <div className={compact ? 'contact-actions contact-actions--compact' : 'contact-actions'}>
       <a className="button button--primary" href={contacts.telegram.href} target="_blank" rel="noopener noreferrer">
-        Написать в Telegram
+        {compact ? contacts.telegram.compactLabel : contacts.telegram.ctaLabel}
       </a>
+      {!compact && contacts.telegram.showHint ? <p className="telegram-flow-note">{contacts.telegram.hint}</p> : null}
       <a className="button" href={contacts.max.href}>
         Написать в MAX
       </a>
@@ -90,7 +91,7 @@ function App() {
           ))}
         </nav>
         <a className="header-cta" href={contacts.telegram.href} target="_blank" rel="noopener noreferrer">
-          Написать
+          {contacts.telegram.compactLabel}
         </a>
       </header>
 
@@ -106,7 +107,7 @@ function App() {
             </p>
             <div className="hero-actions">
               <a className="button button--primary" href={contacts.telegram.href} target="_blank" rel="noopener noreferrer">
-                Начать конфиденциальный диалог
+                {contacts.telegram.ctaLabel}
               </a>
               <a className="button button--ghost" href="#requests">
                 Узнать, с чем можно обратиться
@@ -294,7 +295,7 @@ function App() {
       </footer>
 
       <a className="mobile-sticky-cta" href={contacts.telegram.href} target="_blank" rel="noopener noreferrer">
-        Написать Егине Левоновне
+        {contacts.telegram.ctaLabel}
       </a>
     </div>
   );
