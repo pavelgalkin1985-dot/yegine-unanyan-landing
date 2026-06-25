@@ -17,7 +17,7 @@ import {
 
 type ImageKey = keyof typeof images;
 
-const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+export const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
 function ContactButtons({ compact = false }: { compact?: boolean }) {
   return (
