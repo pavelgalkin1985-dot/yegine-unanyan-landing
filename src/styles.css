@@ -412,17 +412,11 @@ li {
   color: var(--burgundy);
 }
 
-.content-card span,
-.review-card span,
-.document-card span {
+.content-card .eyebrow,
+.review-card .eyebrow,
+.document-card .eyebrow {
   display: block;
   margin-bottom: 28px;
-  color: var(--burgundy);
-  font-family: Manrope, "Segoe UI", sans-serif;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
 .trust-section {
@@ -568,7 +562,7 @@ li {
   padding: clamp(20px, 3vw, 30px);
 }
 
-.document-card__copy span {
+.document-card__copy .eyebrow {
   margin-bottom: 12px;
 }
 
@@ -679,15 +673,9 @@ li {
   text-align: left;
 }
 
-.message-hint span {
+.message-hint .eyebrow {
   display: block;
   margin-bottom: 8px;
-  color: var(--burgundy);
-  font-family: Manrope, "Segoe UI", sans-serif;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
 }
 
 .message-hint p {

@@ -14,24 +14,27 @@ import {
   testimonials,
   trustCards,
 } from './data/siteContent';
+import { assetUrl } from './utils/assetUrl';
+import { ExternalLink } from './components/ExternalLink';
+import { Brand } from './components/Brand';
+import { SectionHeading } from './components/SectionHeading';
+import { TitleTextCard } from './components/TitleTextCard';
 
 type ImageKey = keyof typeof images;
-
-const assetUrl = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
 function ContactButtons({ compact = false }: { compact?: boolean }) {
   return (
     <div className={compact ? 'contact-actions contact-actions--compact' : 'contact-actions'}>
-      <a className="button button--primary" href={contacts.telegram.href} target="_blank" rel="noopener noreferrer">
+      <ExternalLink className="button button--primary" href={contacts.telegram.href}>
         {compact ? contacts.telegram.compactLabel : contacts.telegram.ctaLabel}
-      </a>
+      </ExternalLink>
       {!compact && contacts.telegram.showHint ? <p className="telegram-flow-note">{contacts.telegram.hint}</p> : null}
       <a className="button" href={contacts.max.href}>
         Написать в MAX
       </a>
-      <a className="button button--ghost" href={contacts.vk.href} target="_blank" rel="noopener noreferrer">
+      <ExternalLink className="button button--ghost" href={contacts.vk.href}>
         VK
-      </a>
+      </ExternalLink>
       <p className="contact-phone">
         Единый номер связи: <a href={contacts.max.href}>{contacts.max.phoneLabel}</a>
       </p>
@@ -65,24 +68,11 @@ function FramedImage({ image, className = '' }: { image: ImageKey; className?: s
   );
 }
 
-function SectionHeading({ eyebrow, title, text }: { eyebrow: string; title: string; text?: string }) {
-  return (
-    <div className="section-heading">
-      <p className="eyebrow">{eyebrow}</p>
-      <h2>{title}</h2>
-      {text ? <p>{text}</p> : null}
-    </div>
-  );
-}
-
 function App() {
   return (
     <div className="site-shell" id="top">
       <header className="site-header">
-        <a className="brand" href="#top" aria-label={specialist.shortName}>
-          <span className="brand-mark">ЕУ</span>
-          <span>{specialist.shortName}</span>
-        </a>
+        <Brand ariaLabel={specialist.shortName} />
         <nav className="main-nav" aria-label="Основная навигация">
           {navItems.map((item) => (
             <a href={item.href} key={item.href}>
@@ -90,9 +80,9 @@ function App() {
             </a>
           ))}
         </nav>
-        <a className="header-cta" href={contacts.telegram.href} target="_blank" rel="noopener noreferrer">
+        <ExternalLink className="header-cta" href={contacts.telegram.href}>
           {contacts.telegram.compactLabel}
-        </a>
+        </ExternalLink>
       </header>
 
       <main>
@@ -106,9 +96,9 @@ function App() {
               <strong className="experience-years">11 лет</strong>. Индивидуальный маршрут и конфиденциальное пространство для восстановления внутренней опоры.
             </p>
             <div className="hero-actions">
-              <a className="button button--primary" href={contacts.telegram.href} target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="button button--primary" href={contacts.telegram.href}>
                 {contacts.telegram.ctaLabel}
-              </a>
+              </ExternalLink>
               <a className="button button--ghost" href="#requests">
                 Узнать, с чем можно обратиться
               </a>
@@ -145,7 +135,7 @@ function App() {
           <div className="request-grid">
             {requestCards.map((card, index) => (
               <article className="content-card content-card--large" key={card.title}>
-                <span>{String(index + 1).padStart(2, '0')}</span>
+                <span className="eyebrow">{String(index + 1).padStart(2, '0')}</span>
                 <h3>{card.title}</h3>
                 <ul className="request-points">
                   {card.points.map((point) => (
@@ -161,10 +151,7 @@ function App() {
           <SectionHeading eyebrow="Профессиональный подход" title="Почему выбирают меня?" />
           <div className="trust-grid">
             {trustCards.map((item) => (
-              <article className="content-card" key={item.title}>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </article>
+              <TitleTextCard className="content-card" title={item.title} text={item.text} key={item.title} />
             ))}
           </div>
         </section>
@@ -179,11 +166,11 @@ function App() {
           <div className="document-grid">
             {documentCards.map((item) => (
               <article className="document-card" key={item.title}>
-                <a className="document-card__image" href={assetUrl(item.image)} target="_blank" rel="noopener noreferrer">
+                <ExternalLink className="document-card__image" href={assetUrl(item.image)}>
                   <img src={assetUrl(item.image)} alt={item.alt} loading="lazy" />
-                </a>
+                </ExternalLink>
                 <div className="document-card__copy">
-                  <span>{item.label}</span>
+                  <span className="eyebrow">{item.label}</span>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
                 </div>
@@ -197,10 +184,7 @@ function App() {
             <SectionHeading eyebrow="Форматы работы" title="Формат подбирается после первого контакта" />
             <div className="format-list">
               {formats.map((item) => (
-                <article key={item.title}>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </article>
+                <TitleTextCard title={item.title} text={item.text} key={item.title} />
               ))}
             </div>
           </div>
@@ -226,19 +210,19 @@ function App() {
           <div className="review-grid" aria-label="Отзывы пациентов">
             {testimonials.map((item) => (
               <article className="review-card" key={item.text}>
-                <span>{item.source}</span>
+                <span className="eyebrow">{item.source}</span>
                 <p>{item.text}</p>
-                <a href={item.href} target="_blank" rel="noopener noreferrer">
+                <ExternalLink href={item.href}>
                   Источник
-                </a>
+                </ExternalLink>
               </article>
             ))}
           </div>
           <div className="source-links" aria-label="Ссылки на источники отзывов">
             {testimonialSources.map((source) => (
-              <a className="button button--ghost" href={source.href} target="_blank" rel="noopener noreferrer" key={source.href}>
+              <ExternalLink className="button button--ghost" href={source.href} key={source.href}>
                 {source.label}
-              </a>
+              </ExternalLink>
             ))}
           </div>
         </section>
@@ -277,7 +261,7 @@ function App() {
           <p>Выберите удобный способ связи: Telegram, MAX или VK.</p>
           <ContactButtons />
           <div className="message-hint">
-            <span>Подсказка первого сообщения</span>
+            <span className="eyebrow">Подсказка первого сообщения</span>
             <p>{contacts.firstMessage}</p>
           </div>
         </section>
@@ -285,18 +269,15 @@ function App() {
 
       <footer className="site-footer">
         <div>
-          <a className="brand" href="#top">
-            <span className="brand-mark">ЕУ</span>
-            <span>{specialist.shortName}</span>
-          </a>
+          <Brand />
           <p>{specialist.role}</p>
         </div>
         <ContactButtons compact />
       </footer>
 
-      <a className="mobile-sticky-cta" href={contacts.telegram.href} target="_blank" rel="noopener noreferrer">
+      <ExternalLink className="mobile-sticky-cta" href={contacts.telegram.href}>
         {contacts.telegram.ctaLabel}
-      </a>
+      </ExternalLink>
     </div>
   );
 }
