@@ -5,6 +5,10 @@ import {
   formats,
   heroFacts,
   images,
+  method,
+  methodAdvantages,
+  methodOutcomes,
+  methodSteps,
   navItems,
   paymentRules,
   preparationSteps,
@@ -166,6 +170,47 @@ function App() {
                 <p>{item.text}</p>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section className="section method-section" id="method">
+          <SectionHeading eyebrow={method.eyebrow} title={method.title} text={method.lead} />
+          <p className="method-tagline">«{method.tagline}»</p>
+
+          <div className="method-block">
+            <h3 className="method-subtitle">Уникальность метода</h3>
+            <div className="trust-grid">
+              {methodAdvantages.map((item, index) => (
+                <article className="content-card" key={item.title}>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="method-block">
+            <h3 className="method-subtitle">Как устроен метод</h3>
+            <ol className="method-steps">
+              {methodSteps.map((step) => (
+                <li key={step.code}>
+                  <span className="method-step__code">{step.code}</span>
+                  <h4>{step.title}</h4>
+                  <p>{step.text}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          <div className="method-block">
+            <h3 className="method-subtitle">Что человек получает в работе</h3>
+            <ul className="method-outcomes">
+              {methodOutcomes.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <p className="large-copy method-closing">{method.closing}</p>
           </div>
         </section>
 
